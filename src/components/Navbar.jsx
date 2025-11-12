@@ -3,6 +3,7 @@ import { NavLink } from 'react-router';
 import logo from '../assets/logoremove.png';
 import { FiMenu } from 'react-icons/fi';
 
+
 const Navbar = () => {
     return (
         <div className="navbar bg-base-100 ">
@@ -31,6 +32,7 @@ const Navbar = () => {
 
 
                 <div className="hidden sm:flex gap-2">
+                   
                     <NavLink
                         to="/login"
 
