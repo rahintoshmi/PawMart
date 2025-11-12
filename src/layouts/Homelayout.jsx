@@ -5,14 +5,23 @@ import Footer from '../components/Footer';
 
 const Homelayout = () => {
     return (
-        <div>
+        <div className="max-w-full">
+            {/* HEADER */}
+            <header className="">
+                <div className="max-w-7xl mx-auto">
+                    <Navbar />
+                </div>
+            </header>
 
-            <header><Navbar></Navbar></header>
-            <main>
-                <Outlet></Outlet>
+            {/* MAIN CONTENT */}
+            <main className="">
+                <Outlet />
             </main>
-            <footer><Footer></Footer></footer>
 
+            {/* FOOTER */}
+            <footer className="w-full">
+                <Footer />
+            </footer>
         </div>
     );
 };
