@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body {
+  font-family: "Playfair Display", serif;
+  background-color: #F5F3ED;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #3A756D;
+  /* dark teal/green */
+  --color-secondary: #D2693F;
+  /* burnt orange */
+  --color-accent: #8BC34A;
+  /* light green */
+  --color-base-100: #F5F3ED;
+  /* cream/off-white */
+  --color-neutral: #666666;
+  /* dark gray */
+}
