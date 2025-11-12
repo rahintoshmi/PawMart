@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import Homelayout from "../layouts/Homelayout";
-import Carousel from "../Home/Carousel";
+import Home from "../Home/Home";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
   { 
@@ -9,10 +11,29 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Carousel />,
+                element: <Home />,
             },
-        ]
+            
+            
+            
+        ],
+        
   },
+  {
+    path: '/auth',
+    element: <Homelayout></Homelayout>,
+    children:[
+        {
+            path: '/auth/login',
+            element:<Login></Login>,
+        },
+        {
+            path: '/auth/register',
+            element:<Register></Register>,
+        },
+    ]
+  },
+    
 
   {
     path: '/*',

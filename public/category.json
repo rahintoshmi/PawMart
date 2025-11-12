@@ -1,0 +1,74 @@
+{
+  "categories": [
+    {
+      "name": "Pets",
+      "icon": "FaDog",
+      "description": "Adoptions"
+    },
+    {
+      "name": "Pet Food",
+      "icon": "FaBone",
+      "description": "Healthy & Tasty"
+    },
+    {
+      "name": "Accessories",
+      "icon": "FaPuzzlePiece",
+      "description": "Collars, Toys & More"
+    },
+    {
+      "name": "Pet Care",
+      "icon": "FaPaw",
+      "description": "Grooming & Health"
+    }
+  ],
+  "products": {
+    "Pets": [
+      {
+        "id": 1,
+        "name": "Golden Retriever",
+        "img": "/images/pet1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Siamese Cat",
+        "img": "/images/pet2.jpg"
+      }
+    ],
+    "Pet Food": [
+      {
+        "id": 3,
+        "name": "Dog Kibble",
+        "img": "/images/food1.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Cat Wet Food",
+        "img": "/images/food2.jpg"
+      }
+    ],
+    "Accessories": [
+      {
+        "id": 5,
+        "name": "Dog Collar",
+        "img": "/images/accessory1.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Cat Toy",
+        "img": "/images/accessory2.jpg"
+      }
+    ],
+    "Pet Care": [
+      {
+        "id": 7,
+        "name": "Pet Shampoo",
+        "img": "/images/care1.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Pet Brush",
+        "img": "/images/care2.jpg"
+      }
+    ]
+  }
+}
