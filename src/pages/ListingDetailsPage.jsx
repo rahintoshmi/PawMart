@@ -45,7 +45,7 @@ const MyListingsPage = () => {
         }
     };
 
-    // Update listing
+  
     const handleUpdate = async () => {
         try {
             const { _id, email, ...fieldsToUpdate } = editData;
