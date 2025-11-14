@@ -20,7 +20,7 @@ const AddListingPage = () => {
         setFormData((prev) => ({
             ...prev,
             category: selected,
-            price: selected === "Pets" ? 0 : prev.price, 
+            price: selected === "Pets" ? 0 : prev.price,
         }));
     };
 
@@ -39,7 +39,7 @@ const AddListingPage = () => {
         };
 
         try {
-            const res = await fetch("http://localhost:3000/api/listings", {
+            const res = await fetch("https://paw-mart-server-ten.vercel.app/api/listings", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newListing),

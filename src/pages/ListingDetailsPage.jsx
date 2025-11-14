@@ -11,7 +11,7 @@ const MyListingsPage = () => {
     const fetchListings = async () => {
         if (!user?.email) return;
         try {
-            const res = await fetch("http://localhost:3000/api/all-listings");
+            const res = await fetch("https://paw-mart-server-ten.vercel.app/api/all-listings");
             const data = await res.json();
             const userListings = data.filter(item => item.email === user.email);
             setListings(userListings);
@@ -25,10 +25,10 @@ const MyListingsPage = () => {
         fetchListings();
     }, [user]);
 
-   
+
     const handleDelete = async (id) => {
         try {
-            const res = await fetch(`http://localhost:3000/api/listings/${id}`, { method: "DELETE" });
+            const res = await fetch(`https://paw-mart-server-ten.vercel.app/api/listings/${id}`, { method: "DELETE" });
             if (res.ok) {
                 setListings(prev => prev.filter(item => item._id !== id));
                 setDeleteId(null);
@@ -43,18 +43,18 @@ const MyListingsPage = () => {
         }
     };
 
-  
+
     const handleUpdate = async () => {
         try {
             const { _id, email, ...fieldsToUpdate } = editData;
-            const res = await fetch(`http://localhost:3000/api/listings/${_id}`, {
+            const res = await fetch(`https://paw-mart-server-ten.vercel.app/api/listings/${_id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(fieldsToUpdate)
             });
 
             if (res.ok) {
-                fetchListings(); 
+                fetchListings();
                 setEditData(null);
                 toast.success("Listing updated successfully!");
             } else {
@@ -123,7 +123,7 @@ const MyListingsPage = () => {
                 </div>
             )}
 
-        
+
             {deleteId && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000]">
                     <div className="bg-base-100 p-8 rounded-2xl w-full max-w-md shadow-xl border border-base-200 text-center">
@@ -145,7 +145,7 @@ const MyListingsPage = () => {
                 </div>
             )}
 
-          
+
             {editData && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000]">
                     <div className="bg-base-100 p-8 rounded-2xl w-full max-w-md shadow-xl border border-base-200 text-center">
@@ -173,8 +173,8 @@ const MyListingsPage = () => {
                                 }`}
                             placeholder="Price"
                             readOnly={editData.category == 'Pets'}
-                            
-                            
+
+
                         />
                         <input
                             type="text"

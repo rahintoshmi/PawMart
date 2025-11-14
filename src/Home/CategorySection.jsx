@@ -12,7 +12,7 @@ const CategorySection = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/categories") 
+        fetch("https://paw-mart-server-ten.vercel.app/api/categories")
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(err => console.error("Failed to fetch categories", err));

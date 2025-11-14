@@ -18,7 +18,7 @@ const RecentListingDetailsPage = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/api/listings/${listingId}`)
+        fetch(`https://paw-mart-server-ten.vercel.app/api/listings/${listingId}`)
             .then((res) => res.json())
             .then((data) => setListing(data))
             .catch((err) => console.error("Error fetching listing:", err));
@@ -44,7 +44,7 @@ const RecentListingDetailsPage = () => {
         };
 
         try {
-            const res = await fetch("http://localhost:3000/api/orders", {
+            const res = await fetch("https://paw-mart-server-ten.vercel.app/api/orders", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(orderData),
@@ -150,7 +150,7 @@ const RecentListingDetailsPage = () => {
                                         />
                                     </div>
 
-                                  
+
                                     <div>
                                         <label className="block text-sm font-medium text-neutral mb-1">
                                             Product ID

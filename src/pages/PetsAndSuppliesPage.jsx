@@ -11,9 +11,9 @@ const PetsAndSuppliesPage = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("");
     const navigate = useNavigate();
-    
+
     useEffect(() => {
-        fetch("http://localhost:3000/api/all-listings") 
+        fetch("https://paw-mart-server-ten.vercel.app/api/all-listings")
             .then((res) => res.json())
             .then((data) => {
                 setListings(data);

@@ -5,7 +5,7 @@ const RecentListings = () => {
     const [listings, setListings] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/listings")
+        fetch("https://paw-mart-server-ten.vercel.app/api/listings")
             .then(res => res.json())
             .then(data => setListings(data))
             .catch(err => console.error(err));
@@ -46,7 +46,7 @@ const RecentListings = () => {
                                 {item.price}
                             </p>
                             <Link
-                                to={`/auth/listings/${item._id}`} 
+                                to={`/auth/listings/${item._id}`}
                                 className="w-full bg-primary text-base-100 py-2 rounded-lg font-medium hover:bg-secondary transition-all text-center block"
                             >
                                 See Details

@@ -10,7 +10,7 @@ const CategoryFilteredProductPage = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`http://localhost:3000/api/all-listings`)
+        fetch(`https://paw-mart-server-ten.vercel.app/api/all-listings`)
             .then(res => res.json())
             .then(data => {
                 const filtered = data.filter(

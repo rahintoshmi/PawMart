@@ -17,7 +17,7 @@ const MyOrdersPage = () => {
 
         setIsLoading(true);
         try {
-            const res = await fetch(`http://localhost:3000/api/orders?email=${user.email}`);
+            const res = await fetch(`https://paw-mart-server-ten.vercel.app/api/orders?email=${user.email}`);
             if (!res.ok) throw new Error("Failed to fetch orders");
             const data = await res.json();
             setOrders(data);

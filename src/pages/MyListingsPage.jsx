@@ -14,7 +14,7 @@ const MyListingsPage = () => {
             if (!user?.email) return;
             setLoading(true);
             try {
-                const res = await fetch("http://localhost:3000/api/all-listings");
+                const res = await fetch("https://paw-mart-server-ten.vercel.app/api/all-listings");
                 const data = await res.json();
                 const userListings = data.filter(item => item.email === user.email);
                 setListings(userListings);
@@ -31,7 +31,7 @@ const MyListingsPage = () => {
     // Delete listing
     const handleDelete = async (id) => {
         try {
-            const res = await fetch(`http://localhost:3000/api/listings/${id}`, {
+            const res = await fetch(`https://paw-mart-server-ten.vercel.app/api/listings/${id}`, {
                 method: "DELETE"
             });
             const result = await res.json();
@@ -49,7 +49,7 @@ const MyListingsPage = () => {
     };
     const handleUpdate = async () => {
         try {
-            const res = await fetch(`http://localhost:3000/api/listings/${editData._id}`, {
+            const res = await fetch(`https://paw-mart-server-ten.vercel.app/api/listings/${editData._id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(editData)
