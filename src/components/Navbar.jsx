@@ -26,7 +26,6 @@ const Navbar = () => {
 
     return (
         <div className="navbar w-full mx-auto fixed top-0 left-0 z-50  backdrop-blur-md border-b border-base-200 bg-base-100">
-            {/* Navbar Start */}
             <div className="navbar-start">
                 <div className="flex items-center">
                     <img src={logo} alt="Logo" className="h-16 w-auto object-contain" />

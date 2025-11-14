@@ -62,10 +62,10 @@ const Heros = () => {
                     <motion.div
                         key={hero.name}
                         className="bg-base-100 border border-base-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all"
-                        initial={{ opacity: 0, y: 30 }}           // start hidden
-                        whileInView={{ opacity: 1, y: 0 }}       // animate when in view
-                        viewport={{ once: true, amount: 0.3 }}   // trigger once when 30% visible
-                        transition={{ duration: 0.6, delay: index * 0.2 }} // stagger cards
+                        initial={{ opacity: 0, y: 30 }}          
+                        whileInView={{ opacity: 1, y: 0 }}      
+                        viewport={{ once: true, amount: 0.3 }}  
+                        transition={{ duration: 0.6, delay: index * 0.2 }} 
                     >
                         <img src={hero.image} alt={hero.name} className="w-full h-60 object-cover" />
                         <div className="p-5">
