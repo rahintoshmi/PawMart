@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { FaDog, FaBone, FaPuzzlePiece, FaPaw } from "react-icons/fa";
-
-// Map categories to icons
 const iconMap = {
     Pets: <FaDog size={40} />,
     "Pet Food": <FaBone size={40} />,
@@ -14,7 +12,7 @@ const CategorySection = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/categories") // API endpoint for categories
+        fetch("http://localhost:3000/api/categories") 
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(err => console.error("Failed to fetch categories", err));

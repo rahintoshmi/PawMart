@@ -75,8 +75,6 @@ const PetsAndSuppliesPage = () => {
                     </select>
                 </div>
             </div>
-
-            {/* Listings Grid */}
             {filtered.length === 0 ? (
                 <p className="text-center text-neutral">No listings found.</p>
             ) : (

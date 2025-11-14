@@ -72,8 +72,6 @@ const AddListingPage = () => {
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
-
-                    {/* Product Name */}
                     <div className="relative">
                         <FaPaw className="absolute top-3 left-3 text-primary" />
                         <input

@@ -8,8 +8,6 @@ const MyListingsPage = () => {
     const [listings, setListings] = useState([]);
     const [deleteId, setDeleteId] = useState(null);
     const [editData, setEditData] = useState(null);
-
-    // Fetch user listings
     const fetchListings = async () => {
         if (!user?.email) return;
         try {
@@ -56,7 +54,7 @@ const MyListingsPage = () => {
             });
 
             if (res.ok) {
-                fetchListings(); // refetch to sync with backend
+                fetchListings(); 
                 setEditData(null);
                 toast.success("Listing updated successfully!");
             } else {

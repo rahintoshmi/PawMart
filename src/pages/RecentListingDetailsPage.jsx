@@ -150,10 +150,10 @@ const RecentListingDetailsPage = () => {
                                         />
                                     </div>
 
-                                    {/* Product/Listing ID */}
+                                  
                                     <div>
                                         <label className="block text-sm font-medium text-neutral mb-1">
-                                            Product/Listing ID
+                                            Product ID
                                         </label>
                                         <input
                                             type="text"
@@ -163,7 +163,7 @@ const RecentListingDetailsPage = () => {
                                         />
                                     </div>
 
-                                    {/* Product/Listing Name */}
+                                    {/* Listing Name */}
                                     <div>
                                         <label className="block text-sm font-medium text-neutral mb-1">
                                             Product/Listing Name

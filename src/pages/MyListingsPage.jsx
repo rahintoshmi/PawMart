@@ -9,8 +9,6 @@ const MyListingsPage = () => {
     const [deleteId, setDeleteId] = useState(null);
     const [editData, setEditData] = useState(null);
     const [loading, setLoading] = useState(false);
-
-    // Fetch all listings of logged-in user
     useEffect(() => {
         const fetchListings = async () => {
             if (!user?.email) return;
@@ -49,8 +47,6 @@ const MyListingsPage = () => {
             toast.error("Failed to delete listing");
         }
     };
-
-    // Update listing
     const handleUpdate = async () => {
         try {
             const res = await fetch(`http://localhost:3000/api/listings/${editData._id}`, {
