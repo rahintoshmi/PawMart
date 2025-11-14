@@ -56,7 +56,7 @@ const Register = () => {
                 toast.success("Registered with Google!");
 
                 setTimeout(() => {
-                    navigate(location.state || "/");
+                    navigate(location.state ? location.state : "/");
                 }, 150);
             })
             .catch((error) => {
