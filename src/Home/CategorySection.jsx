@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import { FaDog, FaBone, FaPuzzlePiece, FaPaw } from "react-icons/fa";
 
+// Map categories to icons
 const iconMap = {
-    FaDog: <FaDog size={40} />,
-    FaBone: <FaBone size={40} />,
-    FaPuzzlePiece: <FaPuzzlePiece size={40} />,
-    FaPaw: <FaPaw size={40} />
+    Pets: <FaDog size={40} />,
+    "Pet Food": <FaBone size={40} />,
+    Accessories: <FaPuzzlePiece size={40} />,
+    "Pet Care Products": <FaPaw size={40} />,
 };
 
 const CategorySection = () => {
     const [categories, setCategories] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("/category.json")
-            .then((res) => res.json())
-            .then((data) => setCategories(data.categories));
+        fetch("http://localhost:3000/api/categories") // API endpoint for categories
+            .then(res => res.json())
+            .then(data => setCategories(data))
+            .catch(err => console.error("Failed to fetch categories", err));
     }, []);
-
-    const handleClick = (categoryName) => {
-        navigate(`/category-filtered-product/${categoryName}`);
-    };
 
     return (
         <section className="max-w-7xl mx-auto px-4 py-12">
@@ -29,16 +26,16 @@ const CategorySection = () => {
                 Shop by Category
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                {categories.map((cat) => (
-                    <div
-                        key={cat.name}
-                        onClick={() => handleClick(cat.name)}
-                        className="cursor-pointer border border-base-300 rounded-lg p-6 flex flex-col hover:border-2 hover:border-primary items-center justify-center hover:shadow-lg hover:scale-105 transition-all duration-300 bg-base-100"
+                {categories.map(cat => (
+                    <Link
+                        key={cat._id}
+                        to={`/category-filtered-product/${cat.name}`}
+                        className="cursor-pointer border border-base-300 rounded-lg p-6 flex flex-col items-center justify-center hover:border-2 hover:border-primary hover:shadow-lg hover:scale-105 transition-all duration-300 bg-base-100"
                     >
-                        <div className="text-secondary mb-4">{iconMap[cat.icon]}</div>
+                        <div className="text-secondary mb-4">{iconMap[cat.name]}</div>
                         <h3 className="font-semibold text-lg text-neutral">{cat.name}</h3>
-                        <p className="text-sm text-neutral/70 mt-1">{cat.description}</p>
-                    </div>
+                        <p className="text-sm text-neutral/70 mt-1 text-center">{cat.description}</p>
+                    </Link>
                 ))}
             </div>
         </section>

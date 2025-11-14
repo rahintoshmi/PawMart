@@ -7,6 +7,11 @@ body {
   background-color: #F5F3ED;
 }
 
+.active {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
@@ -20,4 +25,13 @@ body {
   /* cream/off-white */
   --color-neutral: #666666;
   /* dark gray */
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-primary: #76c7c0;
+  --color-secondary: #ffb74d;
+  --color-accent: #3A756D;
+  --color-base-100: #121212;
+  --color-neutral: #eeeeee;
 }
