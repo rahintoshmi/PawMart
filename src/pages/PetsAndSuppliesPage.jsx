@@ -69,9 +69,9 @@ const PetsAndSuppliesPage = () => {
                     >
                         <option value="">All Categories</option>
                         <option value="Pets">Pets</option>
-                        <option value="Food">Food</option>
+                        <option value="Pet Food">Pet Food</option>
                         <option value="Accessories">Accessories</option>
-                        <option value="Care Products">Care Products</option>
+                        <option value="Pet Care Products">Pet Care Products</option>
                     </select>
                 </div>
             </div>
