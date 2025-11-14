@@ -33,21 +33,26 @@ const Login = () => {
     }
     const handleGoogleLogin = () => {
         signInWithGoogle()
-            .then((result) => {
-                const user = result.user;
+            .then((user) => {
                 const updatedUser = {
                     ...user,
-                    photoURL: user.photoURL || "https://api.dicebear.com/7.x/avataaars/svg?seed=" + user.uid,
+                    photoURL: user.photoURL ||
+                        "https://api.dicebear.com/7.x/avataaars/svg?seed=" + user.uid,
                 };
 
-                setUser(updatedUser); 
+                setUser(updatedUser);
+
                 toast.success("Logged in with Google Successfully!");
-                navigate(location.state ? location.state : "/");
+
+                setTimeout(() => {
+                    navigate(location.state || "/");
+                }, 150);
             })
             .catch((error) => {
                 toast.error(error.message);
             });
     };
+
 
     return (
         <section className="min-h-screen flex items-center justify-center bg-base-100 px-4 py-16">

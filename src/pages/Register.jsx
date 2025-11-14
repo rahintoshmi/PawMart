@@ -52,14 +52,18 @@ const Register = () => {
     }
     const handleGoogleRegister = () => {
         signInWithGoogle()
-            .then((result) => {
+            .then((user) => {
                 toast.success("Registered with Google!");
-                navigate(location.state || "/");
+
+                setTimeout(() => {
+                    navigate(location.state || "/");
+                }, 150);
             })
             .catch((error) => {
                 toast.error(error.message);
             });
     };
+
 
     
     
