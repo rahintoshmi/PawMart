@@ -27,7 +27,7 @@ const MyListingsPage = () => {
         fetchListings();
     }, [user]);
 
-    // Delete listing
+   
     const handleDelete = async (id) => {
         try {
             const res = await fetch(`http://localhost:3000/api/listings/${id}`, { method: "DELETE" });
