@@ -147,7 +147,7 @@ const MyListingsPage = () => {
                 </div>
             )}
 
-            {/* Update Modal */}
+          
             {editData && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000]">
                     <div className="bg-base-100 p-8 rounded-2xl w-full max-w-md shadow-xl border border-base-200 text-center">
