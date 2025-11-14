@@ -28,8 +28,6 @@ const router = createBrowserRouter([
         children: [
             { path: "login", element: <Page title="Login | PawMart"><Login /></Page> },
             { path: "register", element: <Page title="Register | PawMart"><Register /></Page> },
-
-            // Private pages
             {
                 path: "add-listing",
                 element: (
