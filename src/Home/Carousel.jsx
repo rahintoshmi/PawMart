@@ -42,7 +42,6 @@ const Carousel = () => {
             />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center px-4">
                 <h2 className="text-white font-bold text-md md:text-2xl lg:text-3xl text-center leading-snug md:leading-normal">
-                    {/* Use key to reset the hook whenever the slide changes */}
                     <TypewriterText key={slides[current].text} text={slides[current].text} />
                 </h2>
             </div>
